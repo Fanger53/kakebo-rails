@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kakebo</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="hero hero-body columns column is-half is-offset-one-quarter has-text-centered">
+    <h2 class="title is-1 ">Kakebo</h2>
+    <div class="card card-content">
+      <%= yield %>
+    </div>
+  </body>
+</html>
