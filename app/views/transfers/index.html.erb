@@ -30,5 +30,6 @@
 
 <%= link_to 'New Transfer', new_transfer_path %>
 <p>
-   <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"button is-info" %>
+  <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:"button is-info" %>
+  <%= link_to 'groups', groups_path %>
 </p>
