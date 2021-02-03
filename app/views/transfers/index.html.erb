@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Transfers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Amount</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @transfers.each do |transfer| %>
+      <tr>
+        <td><%= transfer.name %></td>
+        <td><%= transfer.amount %></td>
+        <td><%= transfer.user_id %></td>
+        <td><%= link_to 'Show', transfer %></td>
+        <td><%= link_to 'Edit', edit_transfer_path(transfer) %></td>
+        <td><%= link_to 'Destroy', transfer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Transfer', new_transfer_path %>
+<p>
+   <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"button is-info" %>
+</p>
