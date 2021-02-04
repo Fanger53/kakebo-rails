@@ -1,5 +1,8 @@
-<h1>New Group</h1>
 
-<%= render 'form', group: @group %>
-
-<%= link_to 'Back', groups_path %>
+<h1 class="title is-3 has-text-centered">New Group</h1>
+<div class="columns column is-half is-offset-one-quarter has-text-centered ">
+<div class="card card-content">
+  <%= render 'form', group: @group %>
+  <%= link_to 'Back', groups_path %>
+</div>
+</div>
