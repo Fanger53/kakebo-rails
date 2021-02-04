@@ -21,6 +21,11 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"input" %>
   </div>
 
+  <div class="field">
+    <%= f.label :avatar, class:"label" %><br />
+    <%= f.file_field :avatar, autofocus: true, autocomplete: "avatar", class:"input" %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Sign up", class:"button is-link is-fullwidth" %>
   </div>
