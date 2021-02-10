@@ -1,13 +1,25 @@
 <p id="notice"><%= notice %></p>
 
 <h1 class="has-text-centered title is-1">Transfers</h1>
-<p> The Total Amount is $<%= total_amount(@transfers) %> </p>
-<table>
+<div class="card  columns is-mobile">
+  <div class="card-content column is-half-mobile has-text-centered">
+    <p class="is-size-5">The Total Amount is</p>
+  </div>
+  <div class="card-content column is-half-mobile has-text-centered">
+    <p class="is-size-6">  $<%= total_amount(@transfers) %> </p>
+  </div>
+</div>
+
+<div class="card ">
+<table class=" card-content">
   <thead>
     <tr>
       <th>Name</th>
-      <th>Amount</th>
+      
       <th>User</th>
+      <th>Group</th>
+      <th>Created</th>
+      
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,20 +28,17 @@
     <% @transfers.each do |transfer| %>
       <tr>
         <td><%= transfer.name %></td>
-        <td><%= transfer.amount %></td>
         <td><%= transfer.user_id %></td>
-        <td><%= link_to 'Show', transfer %></td>
-        <td><%= link_to 'Edit', edit_transfer_path(transfer) %></td>
-        <td><%= link_to 'Destroy', transfer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= transfer.group_id %></td>
+        <td><%= transfer.created_at.strftime('%d %b %Y at %l:%M%P') %></td>
+        <td> $<%= transfer.amount %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
 
 <br>
 
-<%= link_to 'New Transfer', new_transfer_path %>
-<p>
-  <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:"button is-info" %>
-  <%= link_to 'groups', groups_path %>
-</p>
+<%= link_to 'New Transfer', new_transfer_path, class:"button is-success is-fullwidth" %>
+
