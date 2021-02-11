@@ -10,35 +10,32 @@
   </div>
 </div>
 
-<div class="card ">
-<table class=" card-content">
-  <thead>
-    <tr>
-      <th>Name</th>
+<div class='card'>
+ <ul>
+ <div class="column has-text-centered">
+      </div>
+  <% @transfers.each do |transfer| %>
+    <li class=" columns is-mobile">
       
-      <th>User</th>
-      <th>Group</th>
-      <th>Created</th>
-      
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+      <div class="column has-text-centered">
+        <%= transfer.name %>
+      </div>
+      <div class="column">
+        <%= transfer.created_at.strftime('%d %b %Y at %l:%M%P') %>
+      </div>
+      <div class="column">
+        $<%= transfer.amount %>
+      </div>
 
-  <tbody>
-    <% @transfers.each do |transfer| %>
-      <tr>
-        <td><%= transfer.name %></td>
-        <td><%= transfer.user_id %></td>
-        <td><%= transfer.group_id %></td>
-        <td><%= transfer.created_at.strftime('%d %b %Y at %l:%M%P') %></td>
-        <td> $<%= transfer.amount %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-</div>
+    </li>
+  <% end %>
+    
+  </ul>
+  </div>
 
 <br>
 
 <%= link_to 'New Transfer', new_transfer_path, class:"button is-success is-fullwidth" %>
 
+
+ 

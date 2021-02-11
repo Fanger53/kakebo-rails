@@ -65,6 +65,6 @@ class TransfersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def transfer_params
-      params.require(:transfer).permit(:name, :amount, :user_id, :group_id, :created_at)
+      params.require(:transfer).permit(:name, :amount, :user_id, :group_id, :created_at, :icon_image)
     end
 end
