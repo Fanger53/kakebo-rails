@@ -11,6 +11,35 @@
   </head>
 
   <body>
+    <nav class="navbar is-link ">
+      <div class="dropdown navbar-end is-hoverable">
+  <div class="dropdown-trigger">
+    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu2">
+      <span> Menu </span>
+      <span class="icon is-small">
+        <i class="fas fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </button>
+  </div>
+  <div class="dropdown-menu" id="dropdown-menu2" role="menu">
+    <div class="dropdown-content">
+      <hr class="dropdown-divider">
+      
+      <hr class="dropdown-divider">
+      <a href="#" class="dropdown-item">
+        <%= link_to 'All the Transfers', root_path, class:"button is-info is-fullwidth" %> 
+      </a>
+      <a href="#" class="dropdown-item">
+        <%= link_to 'All Groups', groups_path, class:"button is-info is-fullwidth" %>
+      </a>
+      <a href="#" class="dropdown-item">
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:"button is-info is-fullwidth" %>
+      </a>
+    </div>
+  </div>
+</div>
+    </nav>
+   
     <%= yield %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>

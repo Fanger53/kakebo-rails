@@ -4,7 +4,7 @@ class TransfersController < ApplicationController
 
   # GET /transfers or /transfers.json
   def index
-    @transfers = Transfer.all.order("created_at DESC")
+    @transfers = current_user.transfers.order("created_at DESC")
   end
 
   # GET /transfers/1 or /transfers/1.json
@@ -26,7 +26,7 @@ class TransfersController < ApplicationController
 
     respond_to do |format|
       if @transfer.save
-        format.html { redirect_to @transfer, notice: "Transfer was successfully created." }
+        format.html { redirect_to root_path, notice: "Transfer was successfully created." }
         format.json { render :show, status: :created, location: @transfer }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -65,6 +65,6 @@ class TransfersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def transfer_params
-      params.require(:transfer).permit(:name, :amount, :user_id)
+      params.require(:transfer).permit(:name, :amount, :user_id, :group_id, :created_at, :icon_image)
     end
 end

@@ -4,7 +4,7 @@ class GroupsController < ApplicationController
 
   # GET /groups or /groups.json
   def index
-    @groups = Group.all.order("created_at DESC")
+    @groups = current_user.groups.order("created_at DESC")
   end
 
   # GET /groups/1 or /groups/1.json
