@@ -8,6 +8,7 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css">
   </head>
 
   <body>
@@ -27,7 +28,10 @@
       
       <hr class="dropdown-divider">
       <a href="#" class="dropdown-item">
-        <%= link_to 'All the Transfers', root_path, class:"button is-info is-fullwidth" %> 
+        <%= link_to 'Home', root_path, class:"button is-info is-fullwidth" %> 
+      </a>
+      <a href="#" class="dropdown-item">
+        <%= link_to 'All the Transfers', transfers_path, class:"button is-info is-fullwidth" %> 
       </a>
       <a href="#" class="dropdown-item">
         <%= link_to 'All Groups', groups_path, class:"button is-info is-fullwidth" %>

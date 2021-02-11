@@ -15,3 +15,60 @@
  */
 @import "bulma";
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.color-body {
+  background-color: #3778c2;
+ }
+
+ .image-profile {
+    width: 97vw;
+    height: 40vh;
+    background-image: url(https://i.pinimg.com/originals/b5/0e/a5/b50ea5aa68be601c54707bf235c133cf.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    align-content: center;
+ }
+
+ .center {
+   margin-left: auto;
+ }
+
+ .center-text {
+   text-align: center !important; 
+ }
+
+ .box-sizes {
+   width: 95vw;
+   height: 15vh;
+   margin-top: 10px;
+   font-size: 2rem;
+ }
+
+ .mgt-35{
+  padding-top: 27px;
+ }
+
+ .mr-1 {
+  margin-right: 20px !important;
+  padding: 10px 20px;
+ }
+ 
+ .mr-2 {
+  padding-top: 10px;
+ }
+
+ .border-r {
+   width: 60px;
+   height: 60px;
+   border: solid 2px whitesmoke;
+   border-radius: 50%;
+ }
+
+ .text-color {
+  color: whitesmoke;
+ }
+
+ .border-b {
+  border-bottom:solid 2px whitesmoke;
+ }
