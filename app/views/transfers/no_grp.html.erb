@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="has-text-centered title is-1">Transfers</h1>
+<div class="card  columns is-mobile">
+  <div class="card-content column is-half-mobile has-text-centered">
+    <p class="is-size-5">The Total Amount is</p>
+  </div>
+  <div class="card-content column is-half-mobile has-text-centered">
+    <p class="is-size-6">  $<%= total_amount(@transfers) %> </p>
+  </div>
+</div>
+
+<div class='card'>
+ <ul>
+ <div class="column has-text-centered">
+      </div>
+  <% @transfers.each do |transfer| %>
+    <li class=" columns is-mobile">
+      
+      <div class="column has-text-centered">
+        <%= transfer.name %>
+      </div>
+      <div class="column">
+        <%= transfer.created_at.strftime('%d %b %Y at %l:%M%P') %>
+      </div>
+      <div class="column">
+        $<%= transfer.amount %>
+      </div>
+
+    </li>
+  <% end %>
+    
+  </ul>
+  </div>
+
+<br>
+
+<%= link_to 'New Transfer', new_transfer_path, class:"button is-success is-fullwidth" %>

@@ -3,9 +3,12 @@
 <div class="columns is-mobile">
   <p id="notice"><%= notice %></p>\
   <div class="column " > 
-    <div class="image-profile ">
-       image hjhfkjfhgkjfkjhf
-    </div >  
+    <div>
+       <%=image_tag current_user.avatar%>
+    </div >
+    <div>
+      <p> <%= current_user.name%> </p>
+    </div>
     <div class="center-text box-sizes mgt-35 text-color ">
       <span class="icon"><i class="fas fa-dollar-sign border-r mr-1"></i></span>
       <%= link_to 'All transactions', transfers_path, class:'text-color border-b' %>
@@ -17,6 +20,10 @@
     <div class="center-text box-sizes mgt-35 text-color">
     <span><i class="fas fa-sitemap border-r mr-2"></i></span>
       <%= link_to 'All groups', groups_path, class:'text-color border-b' %>
+    </div>
+    <div class="center-text box-sizes mgt-35 text-color">
+    <span><i class="fas fa-sitemap border-r mr-2"></i></span>
+      <%= link_to 'Edit User', edit_user_registration_path, class:'text-color border-b' %>
     </div>
   </div> 
 </div>
