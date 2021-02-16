@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
   def home
-    @user_avatar = current_user.avatar
+    
   end
   private
   def user_params
