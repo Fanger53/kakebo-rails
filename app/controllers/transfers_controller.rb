@@ -1,9 +1,11 @@
 class TransfersController < ApplicationController
-  before_action :set_transfer, only: %i[ show edit update destroy no_grp]
+  before_action :set_transfer, only: %i[ show edit update destroy ]
   before_action :authenticate_user!
 
   def no_grp
     @transfers_nil = current_user.transfers.where(group_id: nil)
+    console.log("QQQQQQQQQQQ")
+    console.log(@transfers_nil)
   end
   
   # GET /transfers or /transfers.json
@@ -65,11 +67,16 @@ class TransfersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_transfer
+      if params[:id] == "no_grp"
+
+      @transfer = nil
+      else
       @transfer = Transfer.find(params[:id])
+      end
     end
 
     # Only allow a list of trusted parameters through.
     def transfer_params
-      params.require(:transfer).permit(:name, :amount, :user_id, :group_id, :created_at, :icon_image)
+      params.permit(:name, :amount, :user_id, :group_id, :created_at, :icon_image)
     end
 end
