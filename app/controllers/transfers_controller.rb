@@ -1,10 +1,14 @@
 class TransfersController < ApplicationController
-  before_action :set_transfer, only: %i[ show edit update destroy ]
+  before_action :set_transfer, only: %i[ show edit update destroy no_grp]
   before_action :authenticate_user!
 
+  def no_grp
+    @transfers_nil = current_user.transfers.where(group_id: nil)
+  end
+  
   # GET /transfers or /transfers.json
   def index
-    @transfers = current_user.transfers.order("created_at DESC")
+    @transfers = current_user.transfers.includes(:group).where.not(group_id: nil).order('created_at DESC')
   end
 
   # GET /transfers/1 or /transfers/1.json
@@ -22,11 +26,11 @@ class TransfersController < ApplicationController
 
   # POST /transfers or /transfers.json
   def create
-    @transfer = Transfer.new(transfer_params)
+    @transfer = current_user.transfers.build(transfer_params)
 
     respond_to do |format|
       if @transfer.save
-        format.html { redirect_to root_path, notice: "Transfer was successfully created." }
+        format.html { redirect_to transfers_path, notice: "Transfer was successfully created." }
         format.json { render :show, status: :created, location: @transfer }
       else
         format.html { render :new, status: :unprocessable_entity }
