@@ -26,7 +26,7 @@ class TransfersController < ApplicationController
 
   # POST /transfers or /transfers.json
   def create
-    @transfer = Transfer.new(transfer_params)
+    @transfer = current_user.transfers.build(transfer_params)
 
     respond_to do |format|
       if @transfer.save
