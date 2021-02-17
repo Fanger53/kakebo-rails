@@ -16,7 +16,9 @@
       </div>
   <% @transfers.each do |transfer| %>
     <li class=" columns is-mobile">
-      
+      <div class="column">
+        <%=  image_tag transfer.group.icon_image, class:"img-size"%> 
+      </div>
       <div class="column has-text-centered">
         <%= transfer.name %>
       </div>
