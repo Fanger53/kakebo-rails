@@ -1,22 +1,20 @@
-<p id="notice"><%= notice %></p>
-
-<h1 class="has-text-centered title is-1">Transfers</h1>
+<h1 class="has-text-centered title is-1">External Transfers</h1>
 <div class="card  columns is-mobile">
   <div class="card-content column is-half-mobile has-text-centered">
     <p class="is-size-5">The Total Amount is</p>
   </div>
   <div class="card-content column is-half-mobile has-text-centered">
-    <p class="is-size-6">  $<%= total_amount(@transfers) %> </p>
+    <p class="is-size-6">  $<%= total_amount(@transfers_nil) %></p>
   </div>
 </div>
+
 
 <div class='card'>
  <ul>
  <div class="column has-text-centered">
       </div>
-  <% @transfers.each do |transfer| %>
+  <% @transfers_nil.each do |transfer| %>
     <li class=" columns is-mobile">
-      
       <div class="column has-text-centered">
         <%= transfer.name %>
       </div>

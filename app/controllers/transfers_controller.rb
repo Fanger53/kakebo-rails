@@ -1,8 +1,8 @@
 class TransfersController < ApplicationController
-  before_action :set_transfer, only: %i[ show edit update destroy no_grp]
+  before_action :set_transfer, only: %i[ show edit update destroy ]
   before_action :authenticate_user!
 
-  def no_grp
+  def ext
     @transfers_nil = current_user.transfers.where(group_id: nil)
   end
   

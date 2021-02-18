@@ -4,7 +4,7 @@
 <div class="card card-content">
   <ul>
   <% @groups.each do |group| %>
-    
+    <a href=<%= group_path(group)%>>
     <li class=" columns is-mobile">
       <div class="column">
         <%= image_tag group.icon_image, class:"img-size" %>
@@ -15,8 +15,8 @@
       <div class="column">
         <%= group.created_at.strftime('%d %b %Y at %l:%M%P') %>
       </div>
-
     </li>
+    </a>
   <% end %>
     
   </ul>
