@@ -40,6 +40,9 @@ You can track the spends you have daily and group them . Users are allowed to up
 
 [www.kakebo.com](https://secure-hollows-62810.herokuapp.com/)
 
+## video Presentation
+[video presentation](https://www.loom.com/share/5e57393de51745378934c3a3a5e737db)
+
 ## 🔧 Built with
 
 - Ruby
