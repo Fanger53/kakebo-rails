@@ -9,7 +9,7 @@
 <p align="center">
   <strong>Made by David Leonardo Castillo R</strong>
   <br>
-   Habitica is a mobile application for  handle the spends of daily routine, this spends are called transfer that you can create and group them.
+   Kakebo is a mobile application for  handle the spends of daily routine, this spends are called transfer that you can create and group them.
 </p>
 
 <p align="center">
@@ -37,7 +37,7 @@ You can track the spends you have daily and group them . Users are allowed to up
 
 ## 🔴 Live Demo:
 
-[www.habitica.com](https://glacial-taiga-23445.herokuapp.com/)
+[www.kakebo.com](https://secure-hollows-62810.herokuapp.com/)
 
 ## 🔧 Built with
 
@@ -45,7 +45,7 @@ You can track the spends you have daily and group them . Users are allowed to up
 - Ruby on Rails
 - Ruby gem bundler
 - Scss
-- Bootstrap
+- Bulma
 - Linters
 - VS code
 
@@ -53,11 +53,11 @@ You can track the spends you have daily and group them . Users are allowed to up
 
 - Ruby gem RSpec
 - Ruby gem capybara
-- Ruby gem Shoulda Matchers
+
 
 ## 📝 Pre-requisites
 
-- Ruby ruby 2.7.2p137
+- Ruby ruby 2.7.0
 - Ruby on Rails 6.1
 - Postgresql
 
@@ -66,7 +66,7 @@ You can track the spends you have daily and group them . Users are allowed to up
 
 To get a local copy up and running follow these simple steps:
 
-1. Go to the [repository page](https://github.com/janis-jenny/Habitica).
+1. Go to the [repository page](https://github.com/Fanger53/kakebo-rails).
 2. Press the "Code" button and copy the link.
 3. Clone it using git command `git clone <link>`.
 4. Follow 'Setup' steps.
@@ -79,17 +79,16 @@ To get a local copy up and running follow these simple steps:
 3. If it required: `bundle update`.
 4. Migrate the database: `rails db:create`.
 5. Migrate the database: `rails db:migrate`.
-6. Migrate the database: `rails db:seed`.
-7. If required run: `yarn install`, and repeate step 4.
-8. Start the application : `rails server`.
-9. To Stop the application : Press `Ctrl + c`
+6. If required run: `yarn install`, and repeate step 4.
+7. Start the application : `rails server`.
+8. To Stop the application : Press `Ctrl + c`
 
 ## 📝 How to use the application?
 
 1. Open the terminal and go to the directory.
 2. Start the application : `rails server`.
 3. Open the browser and go to : `http://localhost:3000/`
-4. Optional: use the [live version link](https://glacial-taiga-23445.herokuapp.com/)
+4. Optional: use the [live version link](https://secure-hollows-62810.herokuapp.com/)
 4. Enjoy the different functions the App has.
 
 ## 👥 Author
