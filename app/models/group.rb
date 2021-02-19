@@ -8,9 +8,9 @@ class Group < ApplicationRecord
   private
 
   def add_default_icon_image
-    unless icon_image.attached?
-      icon_image.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'default.jpg')),
-                        filename: 'default.jpg', content_type: 'image/jpg')
-    end
+    return if icon_image.attached?
+
+    icon_image.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'default.jpg')),
+                      filename: 'default.jpg', content_type: 'image/jpg')
   end
 end
