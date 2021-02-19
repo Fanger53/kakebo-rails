@@ -3,12 +3,14 @@ class Group < ApplicationRecord
   has_many :transfers
   has_one_attached :icon_image
   validates :name, presence: true, uniqueness: { case_sensitive: false }
-  after_commit :add_default_icon_image, on: [:create, :update]
+  after_commit :add_default_icon_image, on: %i[create update]
 
-  private 
+  private
+
   def add_default_icon_image
     unless icon_image.attached?
-      self.icon_image.attach(io: File.open(Rails.root.join("app", "assets", "images", "default.jpg")), filename: 'default.jpg' , content_type: "image/jpg")
+      icon_image.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'default.jpg')),
+                        filename: 'default.jpg', content_type: 'image/jpg')
     end
   end
 end

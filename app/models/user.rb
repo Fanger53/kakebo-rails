@@ -5,18 +5,19 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :transfers
-  has_many :groups 
+  has_many :groups
   has_one_attached :avatar
   validates :username, presence: true, length: { in: 3..15 }
   validates :username, uniqueness: true
   validates :username, format: { with: /[a-zA-Z0-9]/ }
-  after_commit :add_default_avatar, on: [:create, :update]
+  after_commit :add_default_avatar, on: %i[create update]
 
+  private
 
-  private 
   def add_default_avatar
     unless avatar.attached?
-      self.avatar.attach(io: File.open(Rails.root.join("app", "assets", "images", "default.jpg")), filename: 'default.jpg' , content_type: "image/jpg")
+      avatar.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'default.jpg')),
+                    filename: 'default.jpg', content_type: 'image/jpg')
     end
   end
 end

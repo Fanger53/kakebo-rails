@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  current_user = User.first_or_create!(username:'test1', email: 'dean@example.com', password: 'password', password_confirmation: 'password')
+  current_user = User.first_or_create!(username: 'test1', email: 'dean@example.com', password: 'password',
+                                       password_confirmation: 'password')
 
   before(:each) do
     @user1 = User.new(username: 'test1')
@@ -21,17 +22,14 @@ RSpec.describe User, type: :model do
       expect(@user2.valid?).to eq false
     end
   end
-  
-  describe "associations" do
-    it " create user with valid attributes" do
+
+  describe 'associations' do
+    it ' create user with valid attributes' do
       expect(current_user).to be_valid
     end
-    it "invalid create user without username" do
+    it 'invalid create user without username' do
       current_user.username = ''
       expect(current_user).not_to be_valid
     end
-    
-    
   end
-  
 end

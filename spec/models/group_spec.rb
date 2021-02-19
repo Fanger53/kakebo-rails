@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Group, type: :model do
-  current_user = User.first_or_create!(username:'test1', email: 'dean@example.com', password: 'password', password_confirmation: 'password')
+  current_user = User.first_or_create!(username: 'test1', email: 'dean@example.com', password: 'password',
+                                       password_confirmation: 'password')
   let(:group) { current_user.groups.create(name: 'things') }
   context 'testing group controller method and models' do
     it 'expects a new group to created successfuly' do
@@ -15,6 +16,5 @@ RSpec.describe Group, type: :model do
       grouptest = Group.create(name: group.name.to_s)
       expect(grouptest.valid?).to eq false
     end
-    
   end
 end

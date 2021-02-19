@@ -44,8 +44,8 @@ group :development do
   gem 'rack-mini-profiler', '~> 2.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'better_errors', '~> 2.9', '>= 2.9.1'
-  gem 'spring'
   gem 'rspec-rails', '~> 4.0', '>= 4.0.2'
+  gem 'spring'
 end
 
 group :test do
@@ -54,7 +54,6 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
-  gem 'rspec-rails', '~> 4.0', '>= 4.0.2'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
