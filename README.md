@@ -74,7 +74,7 @@ To get a local copy up and running follow these simple steps:
 ## 📝 Setup
 
 1. Open the terminal.
-2. On the terminal navigate to the project directory using `cd Habitica/`.
+2. On the terminal navigate to the project directory using `cd kakebo/`.
 3. Install dependencies using: `bundle install`.
 3. If it required: `bundle update`.
 4. Migrate the database: `rails db:create`.
