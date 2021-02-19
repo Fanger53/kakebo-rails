@@ -29,8 +29,9 @@
 You can track the spends you have daily and group them . Users are allowed to upload their own avatar as a profile photo and also they can do the same to each group in order to best represent the type of spends  they are tracking, otherwise, the app will display a default icon instead.<br>
 
 
-![screenshot](app/assets/images/Screenshot1.jpg)
-![screenshot](app/assets/images/Screenshot2.jpg)
+![kakebo-m](https://user-images.githubusercontent.com/31552010/108456168-b7f83280-723d-11eb-870e-e5e32c19fd89.jpg)
+
+
 
 <hr>
 
