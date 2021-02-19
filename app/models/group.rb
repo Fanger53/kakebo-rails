@@ -2,6 +2,7 @@ class Group < ApplicationRecord
   belongs_to :user
   has_many :transfers
   has_one_attached :icon_image
+  validates :name, presence: true, uniqueness: { case_sensitive: false }
   after_commit :add_default_icon_image, on: [:create, :update]
 
   private 

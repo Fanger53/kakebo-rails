@@ -3,12 +3,10 @@
 <div class="columns is-mobile">
   
   <div class="column " > 
-    <div>
-       <%=image_tag current_user.avatar%>
+    <div class="image  img-size-avatar ">
+       <%=image_tag current_user.avatar, class:'is-rounded'%>
     </div >
-    <div>
-      <p> <%= current_user.name%> </p>
-    </div>
+    
     <div class="center-text box-sizes mgt-35 text-color ">
       <span class="icon"><i class="fas fa-dollar-sign border-r mr-1"></i></span>
       <%= link_to 'All transactions', transfers_path, class:'text-color border-b' %>
