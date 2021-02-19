@@ -4,29 +4,29 @@
   </a>
 </p>
 
-<h1 align="center">Habitica</h1>
+<h1 align="center">Kakebo</h1>
 
 <p align="center">
-  <strong>Made by Jenny Cárdenas</strong>
+  <strong>Made by David Leonardo Castillo R</strong>
   <br>
-   Habitica is a mobile application for recording days and time spent per week for any habits that you can create and group them.
+   Habitica is a mobile application for  handle the spends of daily routine, this spends are called transfer that you can create and group them.
 </p>
 
 <p align="center">
-  <a href="https://github.com/janis-jenny/Habitica/issues">
+  <a href="https://github.com/Fanger53/kakebo-rails/issues">
     <img src="https://img.shields.io/badge/REPORT%20A%20BUG-purple?style=for-the-badge">
   </a>
    ‎ ‎ ‎ ‎
-  <a href="https://github.com/janis-jenny/Habitica/issues">
+  <a href="https://github.com/Fanger53/kakebo-rails/issues">
     <img src="https://img.shields.io/badge/Request%20a%20feature-purple?style=for-the-badge">
   </a>
 </p>
 
 
 
-## 👩🏼‍💻 About Habitica
+## 👩🏼‍💻 About Kakebo
 
-You can track the days and the time per habit and check the total of time that you dedicate to all of them. Users are allowed to upload their own avatar as a profile photo and also they can do the same to each group in order to best represent the type of habit they are tracking, otherwise, the app will display a default icon instead.<br>
+You can track the spends you have daily and group them . Users are allowed to upload their own avatar as a profile photo and also they can do the same to each group in order to best represent the type of spends  they are tracking, otherwise, the app will display a default icon instead.<br>
 
 
 ![screenshot](app/assets/images/Screenshot1.jpg)
@@ -94,18 +94,18 @@ To get a local copy up and running follow these simple steps:
 
 ## 👥 Author
 
-👤 **Jenny Càrdenas**
+👤 **David Leonardo Castillo R**
 
-- GitHub: [@janis_jenny](https://github.com/janis-jenny)
-- LinkedIn: [Jenny Càrdenas](https://www.linkedin.com/in/paolajenny)
-- Twitter: [@janis_jenny](https://twitter.com/janis_jenny)
+- Github: [@David Castillo](https://github.com/Fanger53)
+- Twitter: [@David Castillo](https://twitter.com/DavidLe97005129)
+- Linkedin: [@David Castillo](https://www.linkedin.com/in/david-castillo-61ba10b8/)
 
 
 ## 🤝 Contributions
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/janis-jenny/Habitica/issues).
+Feel free to check the [issues page](https://github.com/Fanger53/kakebo-rails/issues).
 
 
 ## ⭐ Show your support
@@ -115,7 +115,7 @@ Give a ⭐️ if you like this project!
 
 ## 📌 Acknowledgment
 
-- [Gregoire Vella](https://www.behance.net/gregoirevella) created the design this application was based on.
+- [Gregoire Vella](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=) created the design this application was based on.
 - [Rails Guides](https://guides.rubyonrails.org/).
 - Thanks to my Microverse team-mates.
 - Stack Overflow.
