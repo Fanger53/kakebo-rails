@@ -6,7 +6,7 @@ RSpec.feature 'Users', type: :feature do
       visit new_user_registration_path
       within 'form' do
         fill_in 'user_username', with: 'test12'
-        fill_in 'user_email',	with: 'fag1test@g.com'
+        fill_in 'user_email', with: 'fag1test@g.com'
         fill_in 'user_password', with: '123456'
         fill_in 'user_password_confirmation', with: '123456'
       end
@@ -17,9 +17,9 @@ RSpec.feature 'Users', type: :feature do
     scenario 'should be fail' do
       visit new_user_registration_path
       within 'form' do
-        fill_in 'user_email',	with: 'fag1test@g.com'
+        fill_in 'user_email', with: 'fag1test@g.com'
         fill_in 'user_password', with: '123456'
-        fill_in 'user_password_confirmation',	with: '123456'
+        fill_in 'user_password_confirmation', with: '123456'
       end
       click_button 'Sign up'
       expect(page).to have_content('Username is too short')
