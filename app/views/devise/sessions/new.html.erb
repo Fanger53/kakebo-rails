@@ -1,6 +1,9 @@
 <h2 class="title is-3">Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <p class="alert"><%= alert %></p>
+  
   <div class="field">
     <%= f.label :email, class:"label" %><br />
     <div class="control">
