@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="has-text-centered title is-1">Groups</h1>
+<div class="card card-content">
+  <ul>
+  <% @groups.each do |group| %>
+    <a href=<%= group_path(group)%>>
+    <li class=" columns is-mobile">
+      <div class="column">
+        <%= image_tag group.icon_image, class:"img-size" %>
+      </div>
+      <div class="column has-text-centered">
+        <%= group.name %>
+      </div>
+      <div class="column">
+        <%= group.created_at.strftime('%d %b %Y at %l:%M%P') %>
+      </div>
+    </li>
+    </a>
+  <% end %>
+    
+  </ul>
+</div>
+
+<br>
+
+<%= link_to 'New Group', new_group_path, class:"button is-success is-fullwidth" %>
+
+  
+

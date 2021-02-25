@@ -8,9 +8,48 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css">
   </head>
 
   <body>
+    <nav class="navbar nav-color ">
+      <div class="dropdown  is-hoverable">
+  <div class="dropdown-trigger">
+    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu2">
+      <span> <i class="fas fa-bars"></i> </span>
+      <span class="icon is-small">
+        <i class="fas fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </button>
+  </div>
+  <div class="dropdown-menu" id="dropdown-menu2" role="menu">
+    <div class="dropdown-content">
+      <hr class="dropdown-divider">
+      
+      <hr class="dropdown-divider">
+      <a href="#" class="dropdown-item">
+        <%= link_to 'Home', root_path, class:"button is-info is-fullwidth" %> 
+      </a>
+      <a href="#" class="dropdown-item">
+        <%= link_to 'All the Transfers', transfers_path, class:"button is-info is-fullwidth" %> 
+      </a>
+      <a href="#" class="dropdown-item">
+        <%= link_to 'External Transfers', transfers_ext_path, class:"button is-info is-fullwidth" %> 
+      </a>
+      <a href="#" class="dropdown-item">
+        <%= link_to 'All Groups', groups_path, class:"button is-info is-fullwidth" %>
+      </a>
+      <a href="#" class="dropdown-item">
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:"button is-info is-fullwidth" %>
+      </a>
+    </div>
+  </div>
+</div>
+    </nav>
+   
     <%= yield %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
   </body>
 </html>
