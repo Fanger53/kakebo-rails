@@ -9,7 +9,7 @@
     <p class="is-size-6">  $<%= total_amount(@transfers) %> </p>
   </div>
 </div>
-
+<%= link_to 'New Transfer', new_transfer_path, class:"button btn-success is-fullwidth " %>
 <div class='card'>
  <ul>
  <div class="column has-text-centered">
@@ -34,10 +34,3 @@
     
   </ul>
   </div>
-
-<br>
-
-<%= link_to 'New Transfer', new_transfer_path, class:"button is-success is-fullwidth " %>
-
-
- 
