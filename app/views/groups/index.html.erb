@@ -2,7 +2,7 @@
 
 <h1 class="has-text-centered title is-1">Groups</h1>
 <div class="card card-content">
-<%= link_to 'New Group', new_group_path, class:"button btn-success is-fullwidth" %>
+  <%= link_to 'New Group', new_group_path, class:"button btn-success is-fullwidth" %>
   <ul>
   <% @groups.each do |group| %>
     <a href=<%= group_path(group)%>>
