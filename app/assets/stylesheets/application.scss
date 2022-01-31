@@ -17,11 +17,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 .color-body {
-  background-color: #3778c2;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
 }
 
 .center {
   margin-left: auto;
+  margin-right: auto;
 }
 
 .center-text {
@@ -48,11 +50,8 @@
   padding-top: 10px;
 }
 
-.border-r {
-  width: 60px;
-  height: 60px;
-  border: solid 2px whitesmoke;
-  border-radius: 50%;
+.border {
+  border: 2px solid whitesmoke;
 }
 
 .text-color {
