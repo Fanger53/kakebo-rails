@@ -13,38 +13,38 @@
 
   <body>
     <nav class="navbar nav-color ">
-      <div class="dropdown  is-hoverable">
-  <div class="dropdown-trigger">
-    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu2">
-      <span> <i class="fas fa-bars"></i> </span>
-      <span class="icon is-small">
-        <i class="fas fa-angle-down" aria-hidden="true"></i>
-      </span>
-    </button>
-  </div>
-  <div class="dropdown-menu" id="dropdown-menu2" role="menu">
-    <div class="dropdown-content">
-      <hr class="dropdown-divider">
-      
-      <hr class="dropdown-divider">
-      <a href="#" class="dropdown-item">
-        <%= link_to 'Home', root_path, class:"button is-info is-fullwidth" %> 
-      </a>
-      <a href="#" class="dropdown-item">
-        <%= link_to 'Transfers', transfers_path, class:"button is-info is-fullwidth" %> 
-      </a>
-      <a href="#" class="dropdown-item">
-        <%= link_to 'External Transfers', transfers_ext_path, class:"button is-info is-fullwidth" %> 
-      </a>
-      <a href="#" class="dropdown-item">
-        <%= link_to 'Groups', groups_path, class:"button is-info is-fullwidth" %>
-      </a>
-      <a href="#" class="dropdown-item">
-        <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:"button is-info is-fullwidth" %>
-      </a>
+          <div class="dropdown navbar-end is-hoverable">
+      <div class="dropdown-trigger navbar-end">
+        <button class="button" aria-haspopup="true" aria-controls="dropdown-menu2">
+          <span> <i class="fas fa-bars"></i> </span>
+          <span class="icon is-small">
+            <i class="fas fa-angle-down" aria-hidden="true"></i>
+          </span>
+        </button>
+      </div>
+      <div class="dropdown-menu navbar-end" id="dropdown-menu2" role="menu">
+        <div class="dropdown-content">
+          <hr class="dropdown-divider">
+          
+          <hr class="dropdown-divider">
+          <a href="#" class="dropdown-item">
+            <%= link_to 'Home', root_path, class:"button is-fullwidth" %> 
+          </a>
+          <a href="#" class="dropdown-item">
+            <%= link_to 'Transfers', transfers_path, class:"button  is-fullwidth" %> 
+          </a>
+          <a href="#" class="dropdown-item">
+            <%= link_to 'External Transfers', transfers_ext_path, class:"button  is-fullwidth" %> 
+          </a>
+          <a href="#" class="dropdown-item">
+            <%= link_to 'Groups', groups_path, class:"button  is-fullwidth" %>
+          </a>
+          <a href="#" class="dropdown-item">
+            <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:"button is-fullwidth" %>
+          </a>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
     </nav>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
