@@ -4,13 +4,14 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
+         :omniauthable, omniauth_providers: %i[facebook google_oauth2]
   has_many :transfers
   has_many :groups
   has_one_attached :avatar
   validates :username, presence: true, length: { in: 3..15 }
   validates :username, uniqueness: true
   validates :username, format: { with: /[a-zA-Z0-9]/ }
+  validates :email, uniqueness: true
   after_commit :add_default_avatar, on: %i[create update]
 
   def self.create_from_provider_data(provider_data)
