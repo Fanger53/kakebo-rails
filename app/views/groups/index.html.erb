@@ -1,19 +1,18 @@
-<p id="notice"><%= notice %></p>
-
-<h1 class="has-text-centered title is-1">Groups</h1>
+<h1 class="container text-center mt-3">Groups</h1>
 <div class="card card-content">
-  <%= link_to 'New Group', new_group_path, class:"button btn-success is-fullwidth" %>
-  <ul>
+  <%= link_to 'New Group', new_group_path, class:"btn btn-success m-3" %>
+  <ul class="list-group">
   <% @groups.each do |group| %>
-    <a href=<%= group_path(group)%>>
-    <li class=" columns is-mobile">
-      <div class="column">
+    <li class="container-fluid d-md-flex border">
+      <div class="col">
         <%= image_tag group.icon_image, class:"img-size" %>
       </div>
-      <div class="column has-text-centered">
-        <%= group.name %>
+      <div class="col  d-flex justify-content-center">
+        <a href=<%= group_path(group)%> class="text-decoration-none text-dark">
+          Group's Name: <%= group.name %>
+        </a>
       </div>
-      <div class="column">
+      <div class="col">
         <%= group.created_at.strftime('%d %b %Y at %l:%M%P') %>
       </div>
     </li>

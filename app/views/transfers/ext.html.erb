@@ -1,7 +1,7 @@
-<h1 class="has-text-centered title is-1">External Transfers</h1>
-<div class="card  columns is-mobile">
+<h1 class="container text-center mt-3">External Transfers</h1>
+<div class="container-fluid m-3">
   <div class="card-content column is-half-mobile has-text-centered">
-    <p class="is-size-5">The Total Amount is</p>
+    <p class="is-size-5">The Total Amount is :</p>
   </div>
   <div class="card-content column is-half-mobile has-text-centered">
     <p class="is-size-6">  $<%= total_amount(@transfers_nil) %></p>
@@ -10,27 +10,21 @@
 
 
 <div class='card'>
- <ul>
- <div class="column has-text-centered">
-      </div>
+ <%= link_to 'New Transfer', new_transfer_path, class:"btn btn-success m-3" %>
+ <ul class="list-group">
   <% @transfers_nil.each do |transfer| %>
-    <li class=" columns is-mobile">
-      <div class="column has-text-centered">
-        <%= transfer.name %>
+    <li class=" container-fluid d-md-flex my-4">
+      <div class="col">
+        Details: <%= transfer.name %>
       </div>
-      <div class="column">
+      <div class="col">
+        Precio: $<%= transfer.amount %>
+      </div>
+      <div class="col">
         <%= transfer.created_at.strftime('%d %b %Y at %l:%M%P') %>
       </div>
-      <div class="column">
-        $<%= transfer.amount %>
-      </div>
-
     </li>
   <% end %>
     
   </ul>
   </div>
-
-<br>
-
-<%= link_to 'New Transfer', new_transfer_path, class:"button is-success is-fullwidth" %>

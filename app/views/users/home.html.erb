@@ -1,27 +1,26 @@
 <div class="color-body">
-<div class="columns is-mobile">
-  
-  <div class="column " > 
-    <div class="image  img-size-avatar ">
-       <%=image_tag current_user.avatar, class:'is-rounded'%>
-    </div >
-    
-    <div class="center center-text box-sizes mgt-35 text-color ">
-      <span class="icon"><i class="fas fa-dollar-sign mr-1"></i></span>
-      <%= link_to 'Transfers', transfers_path, class:'text-color border-b' %>
-    </div>
-    <div class="center-text box-sizes mgt-35 text-color ">
-      <span><i class="fas fa-funnel-dollar  mr-2"></i></span>
-      <%= link_to 'External Transfers', transfers_path, class:'text-color border-b' %>
-    </div>
-    <div class="center-text box-sizes mgt-35 text-color">
-    <span><i class="fas fa-sitemap  mr-2"></i></span>
-      <%= link_to 'Groups', groups_path, class:'text-color border-b' %>
-    </div>
-    <div class="center-text box-sizes mgt-35 text-color">
-    <span><i class="fas fa-user  mr-2"></i></span>
-      <%= link_to 'Edit User', edit_user_registration_path, class:'text-color border-b' %>
-    </div>
-  </div> 
-</div>
+  <div >
+    <div class="pt-5" > 
+      <div class="image  img-size-avatar border rounded">
+        <%=image_tag current_user.avatar, class:'is-rounded '%>
+      </div >
+      
+      <div class="center center-text box-sizes mgt-35 text-color ">
+        <span class="icon"><i class="fas fa-dollar-sign "></i></span>
+        <%= link_to 'Transfers', transfers_path, class:'text-color border-b text-decoration-none' %>
+      </div>
+      <div class=" center center-text box-sizes mgt-35 text-color">
+        <span><i class="fas fa-funnel-dollar  mr-2"></i></span>
+        <%= link_to 'External Transfers', transfers_ext_path, class:'text-color border-b text-decoration-none' %>
+      </div>
+      <div class="center center-text box-sizes mgt-35 text-color">
+      <span><i class="fas fa-sitemap  mr-2"></i></span>
+        <%= link_to 'Groups', groups_path, class:'text-color border-b text-decoration-none' %>
+      </div>
+      <div class="center center-text box-sizes mgt-35 text-color">
+      <span><i class="fas fa-user  mr-2"></i></span>
+        <%= link_to 'Edit User', edit_user_registration_path, class:'text-color border-b text-decoration-none' %>
+      </div>
+    </div> 
+  </div>
 </div>
