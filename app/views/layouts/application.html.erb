@@ -8,46 +8,37 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css">
   </head>
 
   <body>
-<nav class="navbar nav-color ">
-      <div class="dropdown  is-hoverable">
-  <div class="dropdown-trigger">
-    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu2">
-      <span> <i class="fas fa-bars"></i> </span>
-      <span class="icon is-small">
-        <i class="fas fa-angle-down" aria-hidden="true"></i>
-      </span>
-    </button>
-  </div>
-  <div class="dropdown-menu" id="dropdown-menu2" role="menu">
-    <div class="dropdown-content">
-      <hr class="dropdown-divider">
-      
-      <hr class="dropdown-divider">
-      <a href="#" class="dropdown-item">
-        <%= link_to 'Home', root_path, class:"button is-info is-fullwidth" %> 
-      </a>
-      <a href="#" class="dropdown-item">
-        <%= link_to 'Transfers', transfers_path, class:"button is-info is-fullwidth" %> 
-      </a>
-      <a href="#" class="dropdown-item">
-        <%= link_to 'External Transfers', transfers_ext_path, class:"button is-info is-fullwidth" %> 
-      </a>
-      <a href="#" class="dropdown-item">
-        <%= link_to 'Groups', groups_path, class:"button is-info is-fullwidth" %>
-      </a>
-      <a href="#" class="dropdown-item">
-        <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:"button is-info is-fullwidth" %>
-      </a>
-    </div>
-  </div>
-</div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid d-flex ">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ">
+            <li class="nav-item">
+              <%= link_to 'Home', root_path, class:"nav-link " %>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'Transfers', transfers_path, class:"nav-link" %> 
+            </li>
+            <li class="nav-item">
+              <%= link_to 'External Transfers', transfers_ext_path, class:"nav-link" %> 
+            </li>
+            <li class="nav-item">
+              <%= link_to 'Groups', groups_path, class:"nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:"nav-link" %>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
   <%= yield %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
   </body>
 </html>
