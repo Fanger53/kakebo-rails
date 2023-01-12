@@ -4,7 +4,7 @@ class IncomesController < ApplicationController
 
   # GET /incomes or /incomes.json
   def index
-    @incomes = Income.all
+    @incomes = current_user.incomes.all
   end
 
   # GET /incomes/1 or /incomes/1.json
@@ -22,7 +22,7 @@ class IncomesController < ApplicationController
 
   # POST /incomes or /incomes.json
   def create
-    @income = current_user.transfers.build(income_params)
+    @income = current_user.incomes.build(income_params)
 
     respond_to do |format|
       if @income.save
