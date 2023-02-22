@@ -11,9 +11,23 @@ import "@popperjs/core"
 import "../../assets/stylesheets/application"
 import "bootstrap/dist/css/bootstrap"
 import "bootstrap/dist/js/bootstrap"
+import Chart from 'chart.js/auto';
+import "controllers"
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-import "controllers"
+document.addEventListener('turbolinks:load', () => {
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: JSON.parse(ctx.canvas.dataset.labels),
+      datasets: [{
+        data: JSON.parse(ctx.canvas.dataset.data),
+      }]
+    },
+    });
+  })
+
