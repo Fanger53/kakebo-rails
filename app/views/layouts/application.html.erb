@@ -9,9 +9,9 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= turbo_include_tags %>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css">
   </head>
-
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid d-flex ">
@@ -42,6 +42,7 @@
         </div>
       </div>
     </nav>
-  <%= yield %>
+      <%= turbo_frame_tag "modal" %>
+      <%= yield %>
   </body>
 </html>

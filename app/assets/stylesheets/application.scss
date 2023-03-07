@@ -1,10 +1,6 @@
 // @import "bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-
-.color-body {
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
-}
+@import 'users';
 
 .center {
   margin-left: auto;
@@ -56,17 +52,6 @@
 .n-end {
   position: relative;
   float: left;
-}
-
-.img-size {
-  width: 80px;
-  height: 80px;
-}
-
-.img-size-avatar {
-  width: 200px;
-  height: 200px;
-  margin: auto;
 }
 
 .navbar-nav, .navbar-toggler {

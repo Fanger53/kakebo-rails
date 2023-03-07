@@ -1,3 +1,29 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+#home__chart {
+  max-width: 800px;
+  max-height: 400px;
+  display: flex;
+  justify-items: center;
+  border: 5px solid greenyellow;
+}
+
+.img-size {
+  width: 80px;
+  height: 80px;
+}
+  
+.img-size-avatar {
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.home__userinfo {
+  // height: 15px;
+  .__info__email {
+    margin-left: 15px !important;
+  }
+}

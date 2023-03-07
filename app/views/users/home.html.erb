@@ -1,28 +1,29 @@
-<div class="color-body">
-  <div >
-    <div class="pt-5" > 
+<div class='container'>
+  <div class='row'>
+    <div class='col-lg-6 pt-5'>
       <div class="image  img-size-avatar border rounded">
-        <%=image_tag current_user.avatar, class:'is-rounded '%>
+        <%=image_tag current_user.avatar, class:'is-rounded'%>
       </div >
-      
-      <div class="center center-text box-sizes mgt-35 text-color ">
-        <span class="icon"><i class="fas fa-dollar-sign "></i></span>
-        <%= link_to 'Transfers', transfers_path, class:'text-color border-b text-decoration-none' %>
+      <div class='mt-3 p-4 home__info d-flex justify-content-center border'>
+        <div class='mr-4' >
+         User Name: <%= @user.username %>
+        </div>
+        <div class='__info__email border'>
+          Email: <%= @user.email%>
+        </div>
       </div>
-      <div class=" center center-text box-sizes mgt-35 text-color">
-        <span><i class="fas fa-funnel-dollar  mr-2"></i></span>
-        <%= link_to 'External Transfers', transfers_ext_path, class:'text-color border-b text-decoration-none' %>
+      <div>
+        <%= link_to 'Edit User', edit_user_registration_path, class:'btn border-b text-decoration-none border mt-4' %>
       </div>
-      <div class="center center-text box-sizes mgt-35 text-color">
-      <span><i class="fas fa-sitemap  mr-2"></i></span>
-        <%= link_to 'Groups', groups_path, class:'text-color border-b text-decoration-none' %>
+    </div>
+    <div class='col-lg-6'>
+      <div class="d-flex justify-content-center mt-5">
+        <canvas id="home__chart"  data-labels="<%= @data_keys %>" data-data="<%= @data_values %>" ></canvas>
       </div>
-      <div class="center center-text box-sizes mgt-35 text-color pd-5">
-      <span><i class="fas fa-user  mr-2"></i></span>
-        <%= link_to 'Edit User', edit_user_registration_path, class:'text-color border-b text-decoration-none' %>
-      </div>
-    </div> 
+    </div>
   </div>
 </div>
-
-<canvas id="myChart" width="200px" height="100px" data-labels="<%= @data_keys %>" data-data="<%= @data_values %>" ></canvas>
+ 
+<div>
+  
+</div>

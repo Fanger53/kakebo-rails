@@ -2,14 +2,13 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
   def home
     @data_keys = [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
+      'Transfers',
+      'Incomes'
     ]
-    @data_values = [0, 10, 5, 2, 20, 30, 45]
+    sum_values_transfers = current_user.transfers.all.map(&:amount).sum
+    sum_values_incomes = current_user.incomes.all.map(&:amount).sum
+    @data_values = [sum_values_transfers, sum_values_incomes]
+    @user = current_user
   end
 
   private
