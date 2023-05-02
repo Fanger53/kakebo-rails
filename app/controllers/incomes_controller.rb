@@ -4,7 +4,8 @@ class IncomesController < ApplicationController
 
   # GET /incomes or /incomes.json
   def index
-    @incomes = current_user.incomes.all
+    @income = Income.new
+    @incomes = current_user.incomes.all.order('created_at DESC')
   end
 
   # GET /incomes/1 or /incomes/1.json
@@ -26,10 +27,10 @@ class IncomesController < ApplicationController
 
     respond_to do |format|
       if @income.save
-        format.html { redirect_to income_url(@income), notice: "Income was successfully created." }
-        format.json { render :show, status: :created, location: @income }
+        format.html { redirect_to '/incomes', notice: "Income was successfully created." }
+        format.json { render :index, status: :created, location: @income }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { render :index, status: :unprocessable_entity }
         format.json { render json: @income.errors, status: :unprocessable_entity }
       end
     end
