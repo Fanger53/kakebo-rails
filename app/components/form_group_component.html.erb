@@ -1,0 +1,18 @@
+<%= form_with(model: @model) do |form| %>
+  <% if @model.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@model.errors.count, "error") %> prohibited this @model from being saved:</h2>
+
+      <ul>
+        <% @model.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <%= form.text_field :name, placeholder: 'Name ', class:'form-control mb-3'%>
+    <%= form.file_field :icon_image, class:'form-control mb-3' %>
+
+    <%= form.submit nil, class:'btn text-white btn-primary'  %>
+<% end %>
