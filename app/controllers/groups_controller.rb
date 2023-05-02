@@ -4,6 +4,7 @@ class GroupsController < ApplicationController
 
   # GET /groups or /groups.json
   def index
+    @group = Group.new
     @groups = current_user.groups.order('created_at DESC')
   end
 
@@ -27,10 +28,10 @@ class GroupsController < ApplicationController
 
     respond_to do |format|
       if @group.save
-        format.html { redirect_to groups_path, notice: 'Group was successfully created.' }
-        format.json { render :show, status: :created, location: @group }
+        format.html { redirect_to '/groups', notice: 'Group was successfully created.' }
+        format.json { render :index, status: :created, location: @group }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        # format.html { render :index, status: :unprocessable_entity }
         format.json { render json: @group.errors, status: :unprocessable_entity }
       end
     end
