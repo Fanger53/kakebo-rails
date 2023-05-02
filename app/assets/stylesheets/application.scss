@@ -1,6 +1,8 @@
-// @import "bootstrap";
+@import 'font-awesome';
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import 'users';
+@import 'incomes';
+@import "bootstrap/scss/bootstrap";
 
 .center {
   margin-left: auto;
@@ -49,6 +51,18 @@
   border-bottom: solid 2px whitesmoke;
 }
 
+
+.log__Img {
+  z-index: -10;
+  position: absolute;
+  top: 0;
+  left: 100px;
+
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
 .n-end {
   position: relative;
   float: left;
@@ -58,3 +72,6 @@
   margin-left: auto;
 }
 
+.modal {
+  margin-top: 30vh;
+}
