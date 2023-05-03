@@ -8,10 +8,10 @@
   </div>
 </div>
 <div class='card card-content ' >
-  <%= link_to 'New Transfer', new_income_path, class:"btn btn-success m-3" %>
+  <%= link_to 'New Transfer', new_income_path, class:"btn btn-success m-3", data: { bs_target:"#income-modal", bs_toggle:"modal", remote: true } %>
  <ul class="list-group">
   <% @incomes.each do |income| %>
-    <li class="container-fluid d-md-flex" >
+    <li class="container-fluid d-md-flex m-1" >
       <div class="col ">
         Details: <%= income.name %>
       </div>
@@ -22,13 +22,19 @@
         <%= income.created_at.strftime('%d %b %Y at %l:%M%P') %>
       </div>
       <div class="col">
-        <%= link_to edit_income_path(income), class:"border" do%>
-          <i class="fa-regular fa-pen-to-square"></i>
-        <%end%>
-        <%= link_to "<i class='fa-solid fa-trash-can'></i>".html_safe, income, method: :delete, data: { confirm: 'Are you sure?' }, class:"border"%>
+        <div class="d-flex align-items-center">
+          <%= link_to edit_income_path(income) do%>
+            <i class='fa-regular fa-pen-to-square'></i>
+          <%end%>
+          <%= link_to "<i class='fa-solid fa-trash-can'></i>".html_safe, income, method: :delete, data: { confirm: 'Are you sure?' }%>
+        </div>
       </div>
     </li>
   <% end %>
     
   </ul>
   </div>
+
+<% f = render FormComponent.new( model: @income) %>
+
+<%= render ModalComponent.new(title:'Incomes', body: f , id: 'income-modal') %>
