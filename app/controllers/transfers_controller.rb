@@ -3,11 +3,13 @@ class TransfersController < ApplicationController
   before_action :authenticate_user!
 
   def ext
+    @transfer = Transfer.new
     @transfers_nil = current_user.transfers.where(group_id: nil)
   end
 
   # GET /transfers or /transfers.json
   def index
+    @transfer = Transfer.new
     @transfers = current_user.transfers.includes(:group).where.not(group_id: nil).order('created_at DESC')
   end
 

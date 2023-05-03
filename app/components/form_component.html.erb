@@ -1,0 +1,18 @@
+<%= form_with( model:@model, local:false ) do |form| %>
+  <% if @model.errors.any? %>
+    <div id="error_explanation">
+    <h2><%= pluralize(income.errors.count, "error") %> prohibited this income from being saved:</h2>
+
+    <ul>
+    <% @model.errors.each do |error| %>
+    <li><%= error.full_message %></li>
+    <% end %>
+    </ul>
+    </div>
+  <% end %>
+ 
+  <%= form.text_field :name, placeholder: 'Name of Income', class:'form-control mb-3' %>
+  <%= form.number_field :amount, placeholder: ' $Income', class:'form-control mb-3' %>
+  
+  <%= form.submit nil, class:'btn text-white btn-primary' %> 
+<% end %>

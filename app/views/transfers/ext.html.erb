@@ -10,7 +10,7 @@
 
 
 <div class='card'>
- <%= link_to 'New Transfer', new_transfer_path, class:"btn btn-success m-3" %>
+ <%= link_to 'New Transfer', new_transfer_path, class:"btn btn-success m-3" , data: { bs_target:"#ext-transfer-modal", bs_toggle:"modal", remote: true } %>
  <ul class="list-group">
   <% @transfers_nil.each do |transfer| %>
     <li class=" container-fluid d-md-flex my-4">
@@ -23,8 +23,19 @@
       <div class="col">
         <%= transfer.created_at.strftime('%d %b %Y at %l:%M%P') %>
       </div>
+      <div class="col">
+        <div class="d-flex">
+          <%= link_to edit_transfer_path(transfer) do%>
+            <i class='fa-regular fa-pen-to-square'></i>
+          <%end%>
+          <%= link_to "<i class='fa-solid fa-trash-can'></i>".html_safe, transfer, method: :delete, data: { confirm: 'Are you sure?' }%>
+        </div>
+      </div>
     </li>
   <% end %>
     
   </ul>
   </div>
+<% f = render FormTransferComponent.new( model: @transfer) %>
+
+<%= render ModalComponent.new(title:'Incomes', body: f , id: 'ext-transfer-modal') %>

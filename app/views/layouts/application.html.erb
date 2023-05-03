@@ -9,9 +9,7 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css">
   </head>
-
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid d-flex ">
@@ -22,6 +20,9 @@
           <ul class="navbar-nav ">
             <li class="nav-item">
               <%= link_to 'Home', root_path, class:"nav-link " %>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'Incomes', incomes_path, class:"nav-link " %>
             </li>
             <li class="nav-item">
               <%= link_to 'Transfers', transfers_path, class:"nav-link" %> 
@@ -39,6 +40,6 @@
         </div>
       </div>
     </nav>
-  <%= yield %>
+      <%= yield %>
   </body>
 </html>
