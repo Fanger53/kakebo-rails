@@ -2,28 +2,44 @@
   <div class='row'>
     <div class='col-lg-6 pt-5'>
       <div class="image  img-size-avatar border rounded">
-        <%=image_tag current_user.avatar, class:'is-rounded'%>
+        <%=image_tag current_user.avatar, size:200, class:'is-rounded'%>
       </div >
-      <div class='mt-3 p-4 home__info d-flex justify-content-center border'>
-        <div class='mr-4' >
+        <div class='mt-4  d-flex justify-content-center' >
          User Name: <%= @user.username %>
         </div>
-        <div class='__info__email border'>
-          Email: <%= @user.email%>
+        <div class=' d-flex justify-content-center'>
+          <%= link_to 'Edit User', edit_user_registration_path, class:'btn border-b text-decoration-none border mt-4' %>
         </div>
-      </div>
-      <div>
-        <%= link_to 'Edit User', edit_user_registration_path, class:'btn border-b text-decoration-none border mt-4' %>
-      </div>
+        <div class='border d-flex justify-content-center mt-3'>
+          <div>
+            <%= link_to 'New Income', new_income_path, class:"btn btn-success m-3", data: { bs_target:"#income-modal", bs_toggle:"modal", remote: true } %>
+          </div>
+          <div>
+            <%= link_to 'New Transfer', new_transfer_path, class:"btn btn-success m-3" , data: { bs_target:"#transfer-modal", bs_toggle:"modal", remote: true }%>
+          </div>
+          <div>
+            <%= link_to 'New Group', new_group_path, class:"btn btn-success m-3", data: { bs_target:"#group-modal", bs_toggle:"modal", remote: true } %>
+          </div>
+        </div>
     </div>
-    <div class='col-lg-6'>
-      <div class="d-flex justify-content-center mt-5">
-        <canvas id="home__chart"  data-labels="<%= @data_keys %>" data-data="<%= @data_values %>" ></canvas>
+    <div class='col-lg-6 border'>
+      <div class=" mt-5 border">
+        <canvas id="transfers_home__chart"  data-labels="<%= @data_transfer_keys %>" data-data="<%= @data_transfers_values %>" ></canvas>
+
+        <canvas id="incomes_home__chart"  data-labels="<%= @data_income_keys %>" data-data="<%= @data_incomes_values %>" ></canvas>
+        
       </div>
     </div>
   </div>
-</div>
- 
 <div>
   
 </div>
+
+<% f = render FormComponent.new( model: @income) %>
+<%= render ModalComponent.new(title:'Incomes', body: f , id: 'income-modal') %>
+
+<% f = render FormTransferComponent.new( model: @transfer) %>
+<%= render ModalComponent.new(title:'Transfers', body: f , id: 'transfer-modal') %>
+
+<% f = render FormGroupComponent.new( model: @group) %>
+<%= render ModalComponent.new(title:'Group', body: f , id: 'group-modal') %>
