@@ -13,6 +13,6 @@ export default class extends Controller {
   static targets = [ "output" ]
 
   connect() {
-    this.outputTarget.textContent = 'Hello, Leo!'
+    this.outputTarget.textContent = 'Hello, Leos!'
   }
 }
