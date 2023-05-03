@@ -7,14 +7,13 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
-import "@popperjs/core"
-import "../../assets/stylesheets/application"
-import "bootstrap/dist/css/bootstrap"
-import "bootstrap/dist/js/bootstrap"
+import 'bootstrap';
 import "controllers"
-import charGenerator from "./chart_generator"
+import transfersChartGenerator from "./transfers_chart_generator"
+import incomesChartGenerator from "./incomes_chart_generator"
 
-charGenerator()
+transfersChartGenerator()
+incomesChartGenerator()
 
 Rails.start()
 Turbolinks.start()
